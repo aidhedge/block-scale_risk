@@ -1,7 +1,7 @@
-import numpy as np
 import pandas as pd
 import datetime
 import json
+import math
 from exceptions import DateFormatIsWrong
 
 class Scale:
@@ -28,7 +28,7 @@ class Scale:
 
         temp = [0]
         for x in range(1, len(df_business_days)):
-            temp.append(np.sqrt(x) * self.payload['risk'])
+            temp.append(math.sqrt(x) * self.payload['risk'])
         
         df_business_days['risk'] = temp
 
